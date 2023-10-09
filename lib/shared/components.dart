@@ -174,7 +174,7 @@ Widget defaultbottomNav(
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
-                .copyWith(color: antiFlashWhite),
+                .copyWith(color: antiFlashWhite, fontSize: 18),
           ),
         ),
       ),

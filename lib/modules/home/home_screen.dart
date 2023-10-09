@@ -1,7 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:laza/modules/home/product_screen.dart';
 import 'package:laza/shared/colors.dart';
+import 'package:laza/shared/components.dart';
 
 class HomeScreen extends StatelessWidget {
   List<String> images = [
@@ -185,24 +187,30 @@ class HomeScreen extends StatelessWidget {
     required String image,
     required String description,
   }) =>
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            alignment: Alignment.topRight,
-            children: [
-              Image.asset(
-                image,
-                height: 240,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: SvgPicture.asset("assets/images/Heart.svg"),
-              )
-            ],
-          ),
-          Text(description),
-          Text(price)
-        ],
+      GestureDetector(
+        onTap: () {
+          navigateTo(
+              context, PrdouctScreen(description: description, price: price));
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
+              alignment: Alignment.topRight,
+              children: [
+                Image.asset(
+                  image,
+                  height: 240,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SvgPicture.asset("assets/images/Heart.svg"),
+                )
+              ],
+            ),
+            Text(description),
+            Text(price)
+          ],
+        ),
       );
 }
