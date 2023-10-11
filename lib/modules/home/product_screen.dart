@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 import 'package:flutter/material.dart';
 import 'package:laza/modules/home/home_layout.dart';
+import 'package:laza/modules/home/reviews_screen.dart';
 import 'package:laza/shared/components.dart';
 
 class PrdouctScreen extends StatelessWidget {
@@ -279,13 +280,134 @@ class PrdouctScreen extends StatelessWidget {
                           .copyWith(fontSize: 20),
                     ),
                     const Spacer(),
+                    TextButton(
+                      onPressed: () {
+                        navigateTo(context, const ReviewsScreen());
+                      },
+                      child: Text(
+                        "View all",
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: Colors.grey, fontSize: 15),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: size.height * 0.01,
+                ),
+                Row(
+                  children: [
+                    CircleAvatar(
+                      child: Image.asset("assets/images/ronald_image.png"),
+                    ),
+                    SizedBox(
+                      width: size.width * 0.03,
+                    ),
+                    Column(
+                      children: [
+                        Text(
+                          "Ronald Richards",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(fontSize: 15),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset("assets/images/clock.png"),
+                            SizedBox(
+                              width: size.width * 0.015,
+                            ),
+                            Text(
+                              "13 Sep, 2020",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(color: Colors.grey[500]),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                    const Spacer(),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "4.8",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(fontSize: 16),
+                            ),
+                            SizedBox(
+                              width: size.width * 0.015,
+                            ),
+                            Text(
+                              "rating",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(color: Colors.grey),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: size.height * 0.004,
+                        ),
+                        Image.asset("assets/images/rating.png")
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: size.height * 0.015,
+                ),
+                Text(
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque malesuada eget vitae amet...",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: Colors.grey, fontSize: 15),
+                ),
+                SizedBox(
+                  height: size.height * 0.015,
+                ),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Total Price",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(fontSize: 17),
+                        ),
+                        SizedBox(
+                          height: size.height * 0.003,
+                        ),
+                        Text(
+                          "with VAT,SD",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyMedium!
+                              .copyWith(color: Colors.grey),
+                        )
+                      ],
+                    ),
+                    const Spacer(),
                     Text(
-                      "View all",
+                      "\$125",
                       style: Theme.of(context)
                           .textTheme
-                          .bodyMedium!
-                          .copyWith(color: Colors.grey, fontSize: 15),
-                    ),
+                          .bodyLarge!
+                          .copyWith(fontSize: 17),
+                    )
                   ],
                 ),
               ],
