@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:laza/modules/home/add_review_screen.dart';
+import 'package:laza/shared/components.dart';
 
 class ReviewsScreen extends StatelessWidget {
   const ReviewsScreen({super.key});
@@ -44,7 +46,11 @@ class ReviewsScreen extends StatelessWidget {
                 ],
               ),
               const Spacer(),
-              Image.asset("assets/images/add_review_button.png"),
+              GestureDetector(
+                  onTap: () {
+                    navigateTo(context, const AddReview());
+                  },
+                  child: Image.asset("assets/images/add_review_button.png")),
             ],
           ),
           SizedBox(

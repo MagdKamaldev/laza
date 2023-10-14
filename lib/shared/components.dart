@@ -159,7 +159,7 @@ Widget defaultFormField({
 Widget defaultbottomNav(
         {required BuildContext context,
         required String text,
-        required Widget screenToGoTo}) =>
+         Widget ?  screenToGoTo}) =>
     GestureDetector(
       onTap: () {
         navigateTo(context, screenToGoTo);
@@ -170,7 +170,7 @@ Widget defaultbottomNav(
         height: MediaQuery.of(context).size.height * 0.087,
         child: Center(
           child: Text(
-            text,
+            text, 
             style: Theme.of(context)
                 .textTheme
                 .bodyMedium!
