@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables
 import 'package:flutter/material.dart';
-import 'package:laza/modules/home/home_layout.dart';
+import 'package:laza/modules/home/cart_from_product.dart';
 import 'package:laza/modules/home/reviews_screen.dart';
 import 'package:laza/shared/components.dart';
 
@@ -416,7 +416,9 @@ class PrdouctScreen extends StatelessWidget {
         ]),
       ),
       bottomNavigationBar: defaultbottomNav(
-          context: context, text: "Add to Cart", screenToGoTo: HomeLayout()),
+          context: context,
+          text: "Add to Cart",
+          screenToGoTo: const CartFromProduct()),
     );
   }
 }
