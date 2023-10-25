@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laza/modules/home/adress_screen.dart';
+import 'package:laza/modules/home/payment_screen.dart';
 import 'package:laza/shared/colors.dart';
 import 'package:laza/shared/components.dart';
 
@@ -107,7 +108,9 @@ class CartLayout extends StatelessWidget {
               ),
               const Spacer(),
               IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateTo(context, const PaymentScreen());
+                  },
                   icon: Icon(
                     Icons.arrow_forward_ios,
                     size: size.height * 0.02,

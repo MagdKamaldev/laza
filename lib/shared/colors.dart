@@ -3,6 +3,8 @@ import 'package:material_color_gen/material_color_gen.dart';
 
 final MaterialColor tropicalIndigo = const Color(0xFF9775FA).toMaterialColor();
 
+final MaterialColor tropicalIndigo2 = const Color(0xFFF6F2FF).toMaterialColor();
+
 final MaterialColor tropicalIndigogradient =
     const Color(0xFFB0A3E5).toMaterialColor();
 
