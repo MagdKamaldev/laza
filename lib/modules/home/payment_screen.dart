@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:laza/modules/home/add_new_card.dart';
 import 'package:laza/shared/colors.dart';
 import 'package:laza/shared/components.dart';
 
@@ -48,28 +49,33 @@ class _PaymentScreenState extends State<PaymentScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    height: size.height * 0.065,
-                    decoration: BoxDecoration(
-                      color: tropicalIndigo2,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: tropicalIndigo, width: 2),
-                    ),
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset("assets/images/Plus.png"),
-                          SizedBox(
-                            width: size.width * 0.02,
-                          ),
-                          Text(
-                            'Add new card',
-                            style: theme.bodyLarge!
-                                .copyWith(color: tropicalIndigo, fontSize: 20),
-                          ),
-                        ],
+                  GestureDetector(
+                    onTap: () {
+                      navigateTo(context, const AddCard());
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: size.height * 0.065,
+                      decoration: BoxDecoration(
+                        color: tropicalIndigo2,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: tropicalIndigo, width: 2),
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset("assets/images/Plus.png"),
+                            SizedBox(
+                              width: size.width * 0.02,
+                            ),
+                            Text(
+                              'Add new card',
+                              style: theme.bodyLarge!.copyWith(
+                                  color: tropicalIndigo, fontSize: 20),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
