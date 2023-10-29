@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:laza/modules/home/adress_screen.dart';
+import 'package:laza/modules/home/order_confirmed.dart';
 import 'package:laza/modules/home/payment_screen.dart';
 import 'package:laza/shared/colors.dart';
 import 'package:laza/shared/components.dart';
@@ -245,7 +246,10 @@ class CartFromProduct extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: defaultbottomNav(context: context, text: "Checkout"),
+      bottomNavigationBar: defaultbottomNav(
+          context: context,
+          text: "Checkout",
+          screenToGoTo: const OrderConfirmed()),
     );
   }
 
