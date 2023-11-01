@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:laza/modules/home/drawer.dart';
 import 'package:laza/shared/components.dart';
 
 class OrderConfirmed extends StatelessWidget {
@@ -8,10 +9,12 @@ class OrderConfirmed extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     TextTheme theme = Theme.of(context).textTheme;
+    
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
       ),
+      drawer: const AppDrawer(),
       body: Column(children: [
         SizedBox(
           height: size.height * 0.11,

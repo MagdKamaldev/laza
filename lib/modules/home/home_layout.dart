@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:laza/modules/home/cart_screen.dart';
+import 'package:laza/modules/home/drawer.dart';
 import 'package:laza/modules/home/home_screen.dart';
 import 'package:laza/modules/home/wallet_screen.dart';
 import 'package:laza/modules/home/whitlist_screen.dart';
@@ -24,14 +25,21 @@ class _HomeLayoutState extends State<HomeLayout> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
         leading: Row(
           children: [
             const SizedBox(
               width: 30,
             ),
-            Image.asset("assets/images/drawer_menu.png"),
+            GestureDetector(
+                onTap: () {
+                  scaffoldKey.currentState!.openDrawer();
+                },
+                child: Image.asset("assets/images/drawer_menu.png")),
           ],
         ),
         actions: [
@@ -42,6 +50,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         ],
         toolbarHeight: 80,
       ),
+      drawer: AppDrawer(),
       body: screens[currentIndex],
       bottomNavigationBar: Row(children: [
         GestureDetector(
